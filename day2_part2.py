@@ -1,0 +1,40 @@
+day2 = open("day2_input.txt", "rt")
+text_array = day2.read().split(",")
+text_array = [int(i) for i in text_array]
+original = text_array
+day2.close()
+
+a = 0
+gone_through = False
+
+for noun in range(100):
+    for verb in range(100):
+        a = 0
+        text_array = [i for i in original]
+        text_array[1] = noun
+        text_array[2] = verb
+
+
+        while(text_array[a] != 99):
+            if((text_array[a] == 1) and not(gone_through)):
+                first_number = text_array[a+1]
+                second_number = text_array[a+2]
+                third_number = text_array[a+3]
+                text_array[third_number] = text_array[first_number] + text_array[second_number]
+                gone_through = True
+
+            elif((text_array[a] == 2) and not(gone_through)):   
+                first_number = text_array[a+1]
+                second_number = text_array[a+2]
+                third_number = text_array[a+3]
+                text_array[third_number] = text_array[first_number] * text_array[second_number]
+                gone_through = True
+
+            a += 4
+            gone_through = False
+
+        if(((text_array[0]) == 19690720)):
+                print(100 * noun + verb)
+                break
+
+#5064
