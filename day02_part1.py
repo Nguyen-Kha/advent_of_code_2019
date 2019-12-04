@@ -1,6 +1,7 @@
 day2 = open("day2_input.txt", "rt")
 text_array = day2.read().split(",")
 text_array = [int(i) for i in text_array]
+day2.close()
 
 text_array[1] = 1
 text_array[2] = 2
