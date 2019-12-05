@@ -1,4 +1,4 @@
-day1 = open("day1_input.txt", "rt")
+day1 = open("day01_input.txt", "rt")
 text_array = day1.read().splitlines()
 text_array = [int(i) for i in text_array]
 
